@@ -11,5 +11,5 @@ def insert_school(mongo_collection, **kwargs):
     for key, value in kwargs.items():
         my_list.append({ key: value })
     mongo_collection.insert_many(my_list)
-    x = mongo_collection.inserted_id
+    x = mongo_collection.getId.find()
     return x
