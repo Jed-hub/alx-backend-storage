@@ -7,9 +7,7 @@ def insert_school(mongo_collection, **kwargs):
     """
     Inserts a new document in a collection based on kwargs
     """
-    my_list = []
     for key, value in kwargs.items():
-        my_list.append({ key: value })
-    mongo_collection.insert_many(my_list)
-    x = mongo_collection.getId.find()
+        mongo_collection.insert_one({key: value})
+        x = mongo_collection.getId.find()
     return x
